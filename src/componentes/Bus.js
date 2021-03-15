@@ -10,7 +10,5 @@ const Bus = props => {
     </div>
   );
 };
-Bus.propTypes = {
-  transporte: PropTypes.string.isRequired,
-};
+
 export default Bus;
