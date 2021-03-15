@@ -1,0 +1,79 @@
+{
+  "status": "success",
+  "data": {
+    "ibus": [
+      {
+        "routeId": "2271",
+        "line": "V27",
+        "text-ca": "imminent",
+        "stop": "2",
+        "t-in-s": 53,
+        "destination": "Pg. Marítim",
+        "t-in-min": 0
+      },
+      {
+        "routeId": "2161",
+        "line": "H16",
+        "text-ca": "3 min",
+        "stop": "2",
+        "t-in-s": 201,
+        "destination": "Pg. Zona Franca",
+        "t-in-min": 3
+      },
+      {
+        "routeId": "0590",
+        "line": "59",
+        "text-ca": "3 min",
+        "stop": "2",
+        "t-in-s": 227,
+        "destination": "Pl. Reina Maria Cristina",
+        "t-in-min": 3
+      },
+      {
+        "routeId": "2100",
+        "line": "H10",
+        "text-ca": "6 min",
+        "stop": "3",
+        "t-in-s": 379,
+        "destination": "Olímpic de Badalona",
+        "t-in-min": 6
+      },
+      {
+        "routeId": "2331",
+        "line": "V33",
+        "text-ca": "12 min",
+        "stop": "13",
+        "t-in-s": 747,
+        "destination": "Fòrum Campus Besòs",
+        "t-in-min": 12
+      },
+      {
+        "routeId": "0601",
+        "line": "60",
+        "text-ca": "16 min",
+        "stop": "13",
+        "t-in-s": 984,
+        "destination": "Besòs Verneda",
+        "t-in-min": 16
+      },
+      {
+        "routeId": "0111",
+        "line": "11",
+        "text-ca": "1 min",
+        "stop": "15",
+        "t-in-s": 79,
+        "destination": "Trinitat Vella",
+        "t-in-min": 1
+      },
+      {
+        "routeId": "0600",
+        "line": "60",
+        "text-ca": "3 min",
+        "stop": "15",
+        "t-in-s": 237,
+        "destination": "Vall d'Hebron",
+        "t-in-min": 3
+      }
+    ]
+  }
+}

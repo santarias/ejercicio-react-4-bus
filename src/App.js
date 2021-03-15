@@ -11,7 +11,6 @@ function App() {
       <header className="cabecera">
         <NumeroDeParadas />
         <Display />
-        <Bus />
       </header>
       <section className="forms">
         <FormularioParada />
