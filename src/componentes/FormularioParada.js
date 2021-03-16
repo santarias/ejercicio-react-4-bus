@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import Paradas from "./componentes/Paradas";
+import Paradas from "./Paradas";
 
 const FormularioParada = props => {
-  const { busqueda, setBusqueda } = prop => Paradas;
+  const { busqueda, setBusqueda } = props => Paradas;
   const modificacionDeBusqueda = e => {
     setBusqueda(e.target.value);
   };

@@ -2,9 +2,12 @@ import PropTypes from "prop-types";
 import Bus from "./Bus";
 
 const Display = props => {
+  const { paradas } = props;
+
   return (
     <div className="display">
-      <Bus>
+      <Bus
+        paradas={paradas}>
       </Bus>
     </div>
   );
