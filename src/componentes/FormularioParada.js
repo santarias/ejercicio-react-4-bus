@@ -1,10 +1,18 @@
 import PropTypes from "prop-types";
+import Paradas from "./componentes/Paradas";
 
 const FormularioParada = props => {
+  const { busqueda, setBusqueda } = prop => Paradas;
+  const modificacionDeBusqueda = e => {
+    setBusqueda(e.target.value);
+  };
+  const cercarParada = e => {
+    e.preventDefault();
+  };
   return (
-    <form>
-      <label htmlFor="num-parada">Parada nº: </label>
-      <input type="number" id="num-parada" />
+    <form onSubmit={cercarParada}>
+      <label htmlFor="num-parada">Parada nº: {busqueda}</label>
+      <input type="number" id="num-parada" onChange={modificacionDeBusqueda} />
       <button type="submit">Buscar</button>
     </form>
   );

@@ -6,10 +6,11 @@ import FormularioParada from "./componentes/FormularioParada";
 import FormularioTiempo from "./componentes/FormulaioTiempo";
 
 function App() {
+  const [busqueda, setBusqueda] = useState("");
   return (
     <div className="contenedor">
       <header className="cabecera">
-        <NumeroDeParadas />
+        <NumeroDeParadas nparadas={busqueda} />
         <Display />
       </header>
       <section className="forms">
