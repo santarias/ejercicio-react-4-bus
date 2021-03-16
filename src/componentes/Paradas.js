@@ -1,6 +1,7 @@
-import PropTypes from "prop-types";
+const Parada = (web, linea) => {
 
-const Paradas = prop => {
-  Paradas.displayName = "BusesParadas";
+  if (linea) {
+    return web.find(webAPI => webAPI.stop === linea);
+  };
 };
-export default Paradas;
+export default Parada;
