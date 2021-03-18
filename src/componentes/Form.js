@@ -29,16 +29,17 @@ import Parada from "./Paradas";
 import { Buscar, Paradas } from "./ParadasBuscar";
 
 const Form = (props) => {
-  const { paradaBusqueda } = props;
+  const { paradaBusqueda, respuestaLinea } = props;
   const { web } = useContext(Paradas);
   const { linea, setLinea } = useContext(Buscar);
   return (
     <section className="forms">
       <FormularioParada
         paradaBusqueda={paradaBusqueda}
+        respuestaLinea={respuestaLinea}
       />
       {
-        Parada(web, linea) && <FormularioTiempo />
+        Parada(web, linea) && <FormularioTiempo respuestaLinea={respuestaLinea} />
       }
 
     </section>
