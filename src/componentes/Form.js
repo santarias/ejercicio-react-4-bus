@@ -28,12 +28,15 @@ import FormularioTiempo from "./FormulaioTiempo";
 import Parada from "./Paradas";
 import { Buscar, Paradas } from "./ParadasBuscar";
 
-const Form = () => {
+const Form = (props) => {
+  const { paradaBusqueda } = props;
   const { web } = useContext(Paradas);
   const { linea, setLinea } = useContext(Buscar);
   return (
     <section className="forms">
-      <FormularioParada />
+      <FormularioParada
+        paradaBusqueda={paradaBusqueda}
+      />
       {
         Parada(web, linea) && <FormularioTiempo />
       }
