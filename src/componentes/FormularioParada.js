@@ -27,7 +27,7 @@ import { useContext, useState } from "react";
 import { Buscar, Paradas } from "./ParadasBuscar";
 
 const FormularioParada = (props) => {
-  const { paradaBusqueda } = props;
+  const { paradaBusqueda, respuestaLinea } = props;
   const { setLinea, setEstacionBus } = useContext(Buscar);
   const { web } = useContext(Paradas);
   const [busqueda, setBusqueda] = useState("");
@@ -39,6 +39,7 @@ const FormularioParada = (props) => {
     setEstacionBus(web.filter(parada => parada.stop === busqueda));
     paradaBusqueda(busqueda);
     setLinea(busqueda);
+    respuestaLinea("");
   };
   return (
     <form onSubmit={cercarParadas}>

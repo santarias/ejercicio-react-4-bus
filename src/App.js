@@ -1,7 +1,6 @@
 import Display from "./componentes/Display";
 import { useState } from "react";
 import NumeroDeParadas from "./componentes/NumeroDeParadas";
-import Bus from "./componentes/Bus";
 import parades from "./parades.json";
 import Form from "./componentes/Form";
 import { Paradas, Buscar } from "./componentes/ParadasBuscar";
@@ -11,7 +10,8 @@ function App() {
   const [linea, setLinea] = useState("");
   const [bus, setBus] = useState("");
   const [estacionBus, setEstacionBus] = useState("");
-  const [paradaBuscada, setParadaBuscada] = useState(0);
+  const [paradaBuscada, setParadaBuscada] = useState();
+  const [respuestaLinea, setRespuestaLinea] = useState("");
   return (
     <Paradas.Provider value={{ web }}>
       <Buscar.Provider value={{ linea, setLinea, bus, setBus, estacionBus, setEstacionBus }}>
@@ -19,11 +19,14 @@ function App() {
           <header className="cabecera">
             <NumeroDeParadas />
             <Display
-              paradas={parades.data.ibus.filter(parada => parada.stop === paradaBuscada)} />
+              paradas={parades.data.ibus.filter(parada => parada.stop === paradaBuscada)}
+            />
+            {respuestaLinea && <h2>{respuestaLinea}</h2>}
           </header>
           <Form
             paradas={parades.data.ibus}
             paradaBusqueda={setParadaBuscada}
+            respuestaLinea={setRespuestaLinea}
           />
         </div>
       </ Buscar.Provider>

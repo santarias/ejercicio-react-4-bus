@@ -3,8 +3,6 @@ import Bus from "./Bus";
 
 const Display = props => {
   const { paradas } = props;
-
-  console.log(paradas);
   return (
     <div className="display">
       <Bus
