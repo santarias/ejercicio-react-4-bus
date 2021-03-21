@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useCallback, useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import NumeroDeParadas from "./NumeroDeParadas";
 
 const Bus = props => {
@@ -25,15 +26,26 @@ const Bus = props => {
 
   return (
     paradas.map((parada) =>
-      <div
-        key={parada.routeId}
-        className="bus"
-        style={{ top: algo }}
-      >
-        <span className="linea">{parada.line}</span>
-        <span className="destino">{parada.destination}</span>
-        <span className="tiempo">{parada["text-ca"]}</span>
-      </div>
+      <NavLink key={parada.routeId}
+
+        to={{
+          pathname: "/linea",
+          state: {
+            numeroBus: parada.line,
+            paradaBuena: parada.destination
+          }
+        }}
+        style={{ color: "inherit", textDecoration: "inherit" }}
+        exact>
+        <div
+          className="bus"
+          style={{ top: algo }}
+        >
+          <span className="linea">{parada.line}</span>
+          <span className="destino">{parada.destination}</span>
+          <span className="tiempo">{parada["text-ca"]}</span>
+        </div>
+      </NavLink>
     )
   );
 };
