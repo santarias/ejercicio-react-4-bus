@@ -27,16 +27,16 @@ import { useContext, useState } from "react";
 import { Buscar, Paradas } from "./ParadasBuscar";
 
 const FormularioParada = (props) => {
-  const { paradaBusqueda, respuestaLinea } = props;
+  const { busqueda, setBusqueda, paradaBusqueda, respuestaLinea, infoParada } = props;
   const { setLinea, setEstacionBus } = useContext(Buscar);
   const { web } = useContext(Paradas);
-  const [busqueda, setBusqueda] = useState("");
+
   const modificacionDeParadas = (e) => {
     setBusqueda(e.target.value);
   };
   const cercarParadas = (e) => {
     e.preventDefault();
-    setEstacionBus(web.filter(parada => parada.stop === busqueda));
+    setEstacionBus(infoParada.filter(parada => parada.properties.CODI_PARADA === e.target.value));
     paradaBusqueda(busqueda);
     setLinea(busqueda);
     respuestaLinea("");

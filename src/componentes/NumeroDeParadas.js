@@ -3,10 +3,11 @@ import Parada from "./Paradas";
 import { Buscar, Paradas } from "./ParadasBuscar";
 
 const NumeroDeParadas = props => {
+  const { infoParada, compruebaParada, busqueda } = props;
   const { web } = useContext(Paradas);
   const { linea, setLinea } = useContext(Buscar);
   return (
-    <h1>{`${Parada(web, linea) ? "Parada nº " + linea : "No existe la parada " + linea}`}</h1>
+    <h1>{`${compruebaParada() ? "Parada nº " + busqueda : "No existe la parada " + busqueda}`}</h1>
   );
 };
 export default NumeroDeParadas;

@@ -21,7 +21,7 @@ const Form = props => {
 
 export default Form; */
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import PropTypes from "prop-types"; // ES6
 import FormularioParada from "./FormularioParada";
 import FormularioTiempo from "./FormulaioTiempo";
@@ -29,17 +29,22 @@ import Parada from "./Paradas";
 import { Buscar, Paradas } from "./ParadasBuscar";
 
 const Form = (props) => {
-  const { paradaBusqueda, respuestaLinea } = props;
+  const { busqueda, setBusqueda, compruebaParada, paradaBusqueda, respuestaLinea, infoParada } = props;
   const { web } = useContext(Paradas);
   const { linea, setLinea } = useContext(Buscar);
+
+
   return (
     <section className="forms">
       <FormularioParada
+        busqueda={busqueda}
+        setBusqueda={setBusqueda}
         paradaBusqueda={paradaBusqueda}
         respuestaLinea={respuestaLinea}
+        infoParada={infoParada}
       />
       {
-        Parada(web, linea) && <FormularioTiempo respuestaLinea={respuestaLinea} />
+        compruebaParada() && <FormularioTiempo respuestaLinea={respuestaLinea} />
       }
 
     </section>
