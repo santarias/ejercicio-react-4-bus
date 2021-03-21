@@ -26,7 +26,17 @@ const Bus = props => {
 
   return (
     paradas.map((parada) =>
-      <NavLink key={parada.routeId} to="/linea" style={{ color: "inherit", textDecoration: "inherit" }} exact>
+      <NavLink key={parada.routeId}
+
+        to={{
+          pathname: "/linea",
+          state: {
+            numeroBus: parada.line,
+            paradaBuena: parada.destination
+          }
+        }}
+        style={{ color: "inherit", textDecoration: "inherit" }}
+        exact>
         <div
           className="bus"
           style={{ top: algo }}

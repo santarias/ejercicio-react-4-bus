@@ -1,11 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Linea = (props) => {
-
+  const location = useLocation();
+  console.log(location.state.numeroBus);
   return (
+    location &&
     <>
       <header className="cabecera">
-        <h2>Bus 109 - Hospital Clínic / Polígon Zona Franca</h2>
+        <h2>Bus {location.state.numeroBus} - {location.state.paradaBuena}</h2>
         <h3>Polígon Zona Franca -> Hospital Clínic</h3>
         <NavLink to="/parada" exact>
           Volver a la portada
